@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetPathfinder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">PetPathfinder</a>
+            </div>
+            <ul class="navbar-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#product">Product</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <div class="menu-icon" id="menu-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="home-section">
+            <div class="home-content">
+                <h1>Welcome to <span class="color-change">PetMansion</span></h1>
+                <p>"Your guide to finding a loving home for every Pets"</p>
+                <a href="#about" class="btn">Get Started</a>
+            </div>
+        </section>
+        
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Us</h2>
+                    <p>The system involves a collar tag equipped with a QR code that can be scanned by anyone who finds the pet, providing immediate access to the owner's contact details and medical information. Additionally, the GPS feature enables real-time location tracking via an app, allowing owners to locate their pet quickly. This integration of QR and GPS offers enhanced safety and convenience for pet owners, making it easier to reunite with lost pets.</p>
+                </div>
+                <div class="about-image">
+                    <img src="about.jpg" alt="About Us Image">
+                </div>
+            </div>
+        </section>
+        
+          <section id="product">
+            <h2>Our Product</h2>
+            <div class="product-container">
+              <!-- Product Card -->
+              <div class="product-card">
+                <img src="gps.png" alt="GPS Collar" class="product-image">
+                <h3 class="product-name">GPS Collar</h3>
+                <p class="product-description">A wearable device designed for pets, providing real-time location tracking.</p>
+                <p class="product-price">Price: ₱500.00</p>
+                <button class="btn" onclick="showForm()">Buy Now</button>
+              </div>
+            </div>
+          </section>
+
+          <div class="form-popup" id="purchaseForm">
+            <form id="purchaseFormDetails">
+                <img src="#" alt="QR Code" class="qr-code">
+        
+                <!-- Personal Information Section -->
+                <fieldset class="form-section">
+                    <legend>Personal Information</legend>
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" pattern="^[A-Za-z\s]{1,50}$" required>
+        
+                    <label for="emailAddress">Email Address</label>
+                    <input type="email" id="emailAddress" name="email" placeholder="Enter your email address" required>
+        
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="text" id="phoneNumber" name="phone" placeholder="09XXXXXXXXX" pattern="^09\d{9}$" required>
+                </fieldset>
+        
+                <!-- Address Section -->
+                <fieldset class="form-section">
+                    <legend>Address Information</legend>
+                    <label for="streetAddress">Street Address</label>
+                    <input type="text" id="streetAddress" name="street" placeholder="Enter your street address" required>
+        
+                    <label for="barangay">Barangay</label>
+                    <input type="text" id="barangay" name="barangay" placeholder="Enter your barangay" required>
+        
+                    <label for="city">City/Municipality</label>
+                    <input type="text" id="city" name="city" placeholder="Enter your city/municipality" required>
+        
+                    <label for="province">Province</label>
+                    <input type="text" id="province" name="province" placeholder="Enter your province" required>
+        
+                    <label for="postalCode">Postal Code</label>
+                    <input type="text" id="postalCode" name="postalCode" placeholder="Enter your postal code" pattern="^\d{4}$" required>
+                </fieldset>
+        
+                <!-- File Upload Section -->
+                <fieldset class="form-section">
+                    <legend>Upload Proof</legend>
+                    <label for="imageUpload">Upload Proof (Image)</label>
+                    <input type="file" id="imageUpload" name="imageUpload" accept="image/*" required>
+                </fieldset>
+        
+                <!-- Buttons -->
+                <div class="form-buttons">
+                    <button type="submit" class="submit-btn">Submit</button>
+                    <button type="button" class="close-btn" onclick="closeForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Thank You Modal -->
+        <div id="thankYouModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeThankYouModal()">&times;</span>
+                <h2>Thank You!</h2>
+                <p>Your order has been submitted successfully.</p>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+            <div class="spinner"></div>
+        </div>
+
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="services-container">
+                <div class="service-card">
+                    <img src="adopt.jpg" alt="Pet Adoption">
+                    <h3>Pet Adoption</h3>
+                    <p>Discover the joy of adopting a pet. Browse our listings to find your next furry friend.</p>
+                </div>
+                <div class="service-card">
+                    <img src="grooming.jpg" alt="Pet Grooming">
+                    <h3>Pet Grooming</h3>
+                    <p>Keep your pet looking their best with professional grooming services tailored to your pet’s needs.</p>
+                </div>
+                <div class="service-card">
+                    <img src="training.jpg" alt="Pet Training">
+                    <h3>Pet Training</h3>
+                    <p>Enhance your pet’s behavior with our expert training services for dogs and other pets.</p>
+                </div>
+                <div class="service-card">
+                    <img src="prod.jpg" alt="Pet Products">
+                    <h3>Pet Products</h3>
+                    <p>Find a variety of quality pet products to meet all your pet’s needs, from food to accessories.</p>
+                </div>
+            </div>
+        </section>
+        <section id="gallery">
+            <h2>Our Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="img1.jpg" alt="Image 1" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="img2.jpg" alt="Image 2" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="img3.jpg" alt="Image 3" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="img4.jpg" alt="Image 4" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="img5.jpg" alt="Image 5" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="img6.jpg" alt="Image 6" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="img7.jpg" alt="Image 7" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="img8.jpg" alt="Image 8" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="img9.jpg" alt="Image 9" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="img10.jpg" alt="Image 10" class="gallery-image">
+                </div>
+            </div>
+        </section>
+
+       <!-- Contact Us Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+                 <p>Find us on the map and get in touch for any inquiries.</p> 
+                     <div id="map">
+                    <!-- Embed Google Map -->
+                        <iframe 
+                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123478.26738215382!2d120.98819879726564!3d14.729779700000027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397bb833dd8439d%3A0x87a9a1e467f5bd5a!2sPet%20Mansion%20by%20Gail!5e0!3m2!1sen!2sph!4v1732512560942!5m2!1sen!2sph" 
+                            width="100%" 
+                            height="600" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <h3>PETPATHFINDER</h3> <!-- Title -->
+        <div class="footer-contact">
+            <p><strong>Follow Us on Facebook:</strong> <a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook-circle'></i>Chris Lobitania</a></p>
+            <p><strong>Address:</strong> Casa Carmelita bldg, 001f Rodriguez Hwy, Rodriguez, Rizal</p>
+            <p><strong>Phone:</strong> 09175541718</p>
+            <p><strong>Email:</strong> <a href="crilobitania2002.com">crislobitania2002@gmai.com</a></p>
+        </div>
+        <p>&copy; 2024 PetPathfinder. All rights reserved.</p>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script src="gallery.js"></script>
+    <script src="product.js"></script>
+    <script src="script.js"></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
+
